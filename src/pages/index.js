@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,42 +8,49 @@ import ProductTemplate from '../templates/product';
 
 const IndexPage = props => {
   const products = props.data.allMdx.edges;
-  const siteTitle = "Gatsby Starter Personal Website"
+  const siteTitle = "Christine's Masks 😷"
 
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO
-        title="Home"
-        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        title="Christine's Masks"
+        keywords={[`face mask`, `covid`, `tsung tsin`]}
       />
       <img style={{ margin: 0 }} src="./GatsbyScene.svg" alt="Gatsby Scene" />
       <h1>
-        Hey people{" "}
         <span role="img" aria-label="wave emoji">
           👋
-          </span>
+        </span>{" "}Hey people
       </h1>
-      <p>Welcome to your new Gatsby website. You are on your home page.</p>
-      <p>
-        This starter comes out of the box with styled components and Gatsby's
-        default starter blog running on Netlify CMS.
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+        <div>
+          <p>I've been making face masks for COVID-19 preparedness, and so far I've been churning out about 10 a day!</p>
+          <p>
+            If you want one from the display below, email me at cmcnamee1@rogers.com with the color name.
         </p>
-      <p>Now go build something great!</p>
+          <p>Happy crafting!</p>
+        </div>
+        <div>
+          <img src="/assets/undraw_wash_hands_nwl2.svg" alt="washing hands" />
+        </div>
+      </div>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr 1fr',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))',
         gridTemplateRows: 'auto',
-        gridGap: '20px 20px',
+        rowGap: 50,
+        columnGap: `15%`,
+        margin: '100px 0 200px',
       }}>
-        {products.map(p => (
-          <ProductTemplate
-            data={p.node.frontmatter}
-          />
+        {products
+          .filter(p => p.node.frontmatter.stock)
+          .map(p => (
+            <ProductTemplate
+              key={p.node.frontmatter.path}
+              data={p.node.frontmatter}
+            />
         ))}
       </div>
-      <Link to="/blog/">
-        <Button marginTop="35px">Go to Blog</Button>
-      </Link>
     </Layout>
   );
 }

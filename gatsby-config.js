@@ -29,6 +29,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-strapi',
+      options: {
+        apiURL: process.env.NODE_ENV === 'development' ? 'http://localhost:1337' : 'https://face-mask-cms.herokuapp.com',
+        contentTypes: [
+          'products'
+        ],
+        queryLimit: 1000,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
@@ -74,7 +84,7 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         // edit below
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `static/button-with-cross-stitch.svg`,
       },
     },
     {

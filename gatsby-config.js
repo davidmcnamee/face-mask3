@@ -4,7 +4,7 @@ module.exports = {
     title: `Christine's Masks`,
     author: `David McNamee`,
     description: `A small gatsby site for showing custom-made face masks.`,
-    siteUrl: `christines-masks.netlify.app`,
+    siteUrl: `http://christines-masks.netlify.app`,
   },
   plugins: [
     `gatsby-plugin-netlify-cms`,

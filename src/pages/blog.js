@@ -10,6 +10,7 @@ import Button from "../components/button"
 class Blog extends React.Component {
   render() {
     const { data } = this.props
+    console.log('blog page:', JSON.stringify(data.allMdx.edges));
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges
 

@@ -16,3 +16,14 @@ collections:
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
+  - name: products
+    label: Products
+    folder: content/products
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: name, label: Name }
+      - { name: stock, label: Stock, widget: number }
+      - { name: description, label: Description, widget: markdown }
+      - { name: photo, label: Photo, widget: image }

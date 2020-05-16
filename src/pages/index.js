@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 
@@ -7,24 +6,9 @@ import SEO from "../components/seo"
 import Button from "../components/button"
 import ProductTemplate from '../templates/product';
 
-const FUNCTIONS_BASE_URL = `${process.env.NODE_ENV === 'development' ? 'http://localhost:9000' : 'https://christines-masks.netlify.app'}/.netlify/functions`
-
 const IndexPage = props => {
-  const products = props.data.allStrapiProducts.edges;
+  const products = props.data.allMdx.edges;
   const siteTitle = "Christine's Masks 😷"
-  // const [selectedProducts, setSelectedProducts] = useState([1]);
-
-  // useEffect(() => {
-  //   (async function() {
-  //     try {
-  //       console.log(FUNCTIONS_BASE_URL);
-  //       await axios.get(`${FUNCTIONS_BASE_URL}/requestMasks?products=${selectedProducts.join(',')}`);
-  //       alert('success!');
-  //     } catch(err) {
-  //       alert(err.toString());
-  //     }
-  //   })();
-  // }, []);
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -59,11 +43,11 @@ const IndexPage = props => {
         margin: '100px 0 200px',
       }}>
         {products
-          .filter(p => p.node.stock)
+          .filter(p => p.node.frontmatter.stock)
           .map(p => (
             <ProductTemplate
-              key={p.node.path}
-              data={p.node}
+              key={p.node.frontmatter.path}
+              data={p.node.frontmatter}
             />
         ))}
       </div>
@@ -73,38 +57,19 @@ const IndexPage = props => {
 
 export default IndexPage;
 
-// export const pageQuery = graphql`
-//   query AllProducts {
-//     allMdx(filter: {fileAbsolutePath: {regex: "/products/"}}) {
-//       edges {
-//         node {
-//           frontmatter {
-//             date
-//             description
-//             path
-//             name
-//             photo
-//             stock
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
-
 export const pageQuery = graphql`
-  query AllStrapiProducts {
-    allStrapiProducts {
+  query AllProducts {
+    allMdx(filter: {fileAbsolutePath: {regex: "/products/"}}) {
       edges {
         node {
-          date
-          description
-          path
-          name
-          photo {
-            publicURL
+          frontmatter {
+            date
+            description
+            path
+            name
+            photo
+            stock
           }
-          stock
         }
       }
     }

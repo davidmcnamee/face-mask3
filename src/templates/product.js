@@ -19,7 +19,7 @@ const ProductTemplate = props => {
     <div>
       <motion.img 
         ref={imgRef}
-        src={photo.publicURL}
+        src={photo}
         className="photo-img"
         style={{ left: imgLeftOffset }}
         onMouseEnter={() => {

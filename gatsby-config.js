@@ -29,16 +29,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-strapi',
-      options: {
-        apiURL: process.env.NODE_ENV === 'development' ? 'http://localhost:1337' : 'https://face-mask-cms.herokuapp.com',
-        contentTypes: [
-          'products'
-        ],
-        queryLimit: 1000,
-      },
-    },
-    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],

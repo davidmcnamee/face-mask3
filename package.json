@@ -5,14 +5,12 @@
   "version": "1.0.0",
   "author": "David McNamee <davidmcnamee314@gmail.com>",
   "scripts": {
-    "build": "yarn functions:build && gatsby build",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "yarn develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "functions:serve": "netlify-lambda serve ./src/functions",
-    "functions:build": "netlify-lambda build ./src/functions"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.5.1",

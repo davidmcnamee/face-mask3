@@ -16,3 +16,12 @@ collections:
       - { name: adult, label: Adult Stock, widget: number }
       - { name: youth, label: Youth Stock, widget: number }
       - { name: photo, label: Photo, widget: image }
+  - name: pages
+    label: Pages
+    folder: content/pages
+    files:
+      - file: "index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {label: Title, name: title, widget: string}

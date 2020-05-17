@@ -11,9 +11,8 @@ collections:
     folder: content/products
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
-      - { name: name, label: Name }
-      - { name: stock, label: Stock, widget: number }
-      - { name: description, label: Description, widget: markdown }
+      - { name: date, label: Posted, widget: datetime }
+      - { name: tag, label: Tag }
+      - { name: adult, label: Adult Stock, widget: number }
+      - { name: youth, label: Youth Stock, widget: number }
       - { name: photo, label: Photo, widget: image }

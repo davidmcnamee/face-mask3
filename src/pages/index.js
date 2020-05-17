@@ -43,10 +43,10 @@ const IndexPage = props => {
         margin: '100px 0 200px',
       }}>
         {products
-          .filter(p => p.node.frontmatter.stock)
+          .filter(p => p.node.frontmatter.adult || p.node.frontmatter.youth)
           .map(p => (
             <ProductTemplate
-              key={p.node.frontmatter.path}
+              key={p.node.frontmatter.tag}
               data={p.node.frontmatter}
             />
         ))}
@@ -64,11 +64,10 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             date
-            description
-            path
-            name
+            tag
+            adult
+            youth
             photo
-            stock
           }
         }
       }

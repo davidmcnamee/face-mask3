@@ -9,7 +9,7 @@ const SCALE = 2.0;
 
 const ProductTemplate = props => {
   const { data } = props;
-  const { date, description, path, name, photo, stock } = data;
+  const { date, tag, adult, youth, photo } = data;
   const [isHovering, setHovering] = useState(false);
   const imgRef = useRef(null);
   const [textbox, setTextbox] = useTextboxFade();
@@ -60,11 +60,12 @@ const ProductTemplate = props => {
         borderBottomRightRadius: 50,
         ...textbox
       }}>
-        <h1 style={{marginTop: 10}}>{name}</h1>
-        <h3 style={{marginTop: 0}}>Only {stock} left!</h3>
-        <p>{description}</p>
+        <h1 style={{marginTop: 10}}>{tag}</h1>
+        <h3 style={{marginTop: 0}}>Only {adult + youth} left!</h3>
+        <p><strong>Adult size:</strong> {adult}</p>
+        <p><strong>Youth size:</strong> {youth}</p>
       </motion.div>
-      <h2 style={{marginTop: 0, marginBottom: 5}}>{name}</h2>
+      <h2 style={{marginTop: 0, marginBottom: 5}}>{tag}</h2>
       <p>{new Date(date).toLocaleDateString('en-US')}</p>
     </div>
   );

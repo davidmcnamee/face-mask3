@@ -10,10 +10,17 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-yaml`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/page-data`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

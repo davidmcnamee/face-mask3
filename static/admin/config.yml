@@ -2,6 +2,9 @@ backend:
   name: github
   repo: davidmcnamee/face-mask3
 
+local_backend:
+  url: http://localhost:8081/api/v1
+
 media_folder: static/assets
 public_folder: assets
 
@@ -16,12 +19,15 @@ collections:
       - { name: adult, label: Adult Stock, widget: number }
       - { name: youth, label: Youth Stock, widget: number }
       - { name: photo, label: Photo, widget: image }
-  - name: pages
-    label: Pages
-    folder: content/pages
+  - label: Pages
+    name: pages
     files:
-      - file: "index.md"
-        label: "Landing Page"
-        name: "index"
+      - label: "Home Page"
+        name: home
+        file: "content/page-data/index.yml"
         fields:
-          - {label: Title, name: title, widget: string}
+          - { name: name, label: Page Name }
+          - { name: title, label: Page Title }
+          - { name: img, label: Feature Image, widget: image }
+          - { name: greeting, label: Greeting }
+          - { name: text, label: Explanation block, widget: markdown }

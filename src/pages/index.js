@@ -8,27 +8,27 @@ import ProductTemplate from '../templates/product';
 
 const IndexPage = props => {
   const products = props.data.allMdx.edges;
-  const siteTitle = "Christine's Masks 😷"
+  const pageData = props.data.pageDataYaml || {
+    name: "Home",
+    title: "Christine's Masks 😷",
+    img: "jfa_banner.jpg",
+    greeting: "👋 Hey people",
+    text: "I've been making face masks for COVID-19 preparedness, and so far I've been churning out about 10 a day!\nIf you want one from the display below, email me at cmcnamee1@rogers.com with the color name.\nHappy crafting!"
+  };
 
   return (
-    <Layout location={props.location} title={siteTitle}>
+    <Layout location={props.location} title={pageData.title}>
       <SEO
         title="Home"
         keywords={[`face mask`, `covid`, `tsung tsin`]}
       />
-      <img style={{ margin: 0 }} src="./jfa_banner.jpg" alt="jfa wearing a mask" />
+      <img style={{ margin: 0 }} src={pageData.img} alt="jfa wearing a mask" />
       <h1>
-        <span role="img" aria-label="wave emoji">
-          👋
-        </span>{" "}Hey people
+        {pageData.greeting}
       </h1>
       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
         <div>
-          <p>I've been making face masks for COVID-19 preparedness, and so far I've been churning out about 10 a day!</p>
-          <p>
-            If you want one from the display below, email me at cmcnamee1@rogers.com with the color name.
-        </p>
-          <p>Happy crafting!</p>
+          {pageData.text}
         </div>
         <div>
           <img src="/assets/undraw_wash_hands_nwl2.svg" alt="washing hands" />
@@ -71,6 +71,13 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    pageDataYaml(name: {eq: "Home"}) {
+      name
+      title
+      img
+      greeting
+      text
     }
   }
 `

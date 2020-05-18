@@ -62,8 +62,8 @@ const ProductTemplate = props => {
       }}>
         <h1 style={{marginTop: 10}}>{tag}</h1>
         <h3 style={{marginTop: 0}}>Only {adult + youth} left!</h3>
-        <p><strong>Adult</strong> {adult}</p>
-        <p><strong>Youth</strong> {youth}</p>
+        <p><strong>Adult</strong> {adult} left</p>
+        <p><strong>Youth</strong> {youth} left</p>
       </motion.div>
       <h2 style={{marginTop: 0, marginBottom: 5}}>{tag}</h2>
       <p>{new Date(date).toLocaleDateString('en-US')}</p>

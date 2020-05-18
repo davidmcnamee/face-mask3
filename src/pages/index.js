@@ -8,13 +8,7 @@ import ProductTemplate from '../templates/product';
 
 const IndexPage = props => {
   const products = props.data.allMdx.edges;
-  const pageData = props.data.pageDataYaml || {
-    name: "Home",
-    title: "Christine's Masks 😷",
-    img: "jfa_banner.jpg",
-    greeting: "👋 Hey people",
-    text: "I've been making face masks for COVID-19 preparedness, and so far I've been churning out about 10 a day!\nIf you want one from the display below, email me at cmcnamee1@rogers.com with the color name.\nHappy crafting!"
-  };
+  const pageData = props.data.pageDataYaml;
 
   return (
     <Layout location={props.location} title={pageData.title}>
@@ -27,9 +21,9 @@ const IndexPage = props => {
         {pageData.greeting}
       </h1>
       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-        <div>
-          {pageData.text}
-        </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: pageData.text }}
+        />
         <div>
           <img src="/assets/undraw_wash_hands_nwl2.svg" alt="washing hands" />
         </div>

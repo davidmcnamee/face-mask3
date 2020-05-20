@@ -67,6 +67,8 @@ const ProductTemplate = props => {
       </motion.div>
       <h2 style={{marginTop: 0, marginBottom: 5}}>{tag}</h2>
       <p>{new Date(date).toLocaleDateString('en-US')}</p>
+      <p>{adult} Adult</p>
+      <p>{youth} Youth</p>
     </div>
   );
 }

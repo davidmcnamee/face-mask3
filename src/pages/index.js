@@ -4,74 +4,123 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/button"
-import ProductTemplate from '../templates/product';
+import ProductTemplate from "../templates/product"
+
+const ProductsGrid = props => {
+  const { products } = props
+
+  if (products.length === 0) {
+    return <h3>Coming Soon</h3>
+  }
+
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))",
+        gridTemplateRows: "auto",
+        rowGap: 50,
+        columnGap: `15%`,
+        margin: "100px 0 100px",
+      }}
+    >
+      {products.map(p => (
+        <ProductTemplate key={p.tag} data={p} />
+      ))}
+    </div>
+  )
+}
 
 const IndexPage = props => {
-  const products = props.data.allMdx.edges;
-  const pageData = props.data.pageDataYaml;
+  const ogProducts = props.data.allMdx.edges
+  console.log(ogProducts)
+  const products = ogProducts
+    .map(p => p.node.frontmatter)
+    .filter(p => {
+      console.log(p)
+      return !!p.adult || !!p.youth || !!p.small || !!p.medium || !!p.large
+    })
+    .map(p => {
+      const newProduct = { ...p }
+      // normalization
+      newProduct.adult = p.adult || 0
+      newProduct.youth = p.youth || 0
+      newProduct.small = p.small || 0
+      newProduct.medium = p.medium || 0
+      newProduct.large = p.large || 0
+      newProduct.creator = p.creator || "christine"
+      return newProduct
+    })
+  const pageData = props.data.pageDataYaml
 
   return (
     <Layout location={props.location} title={pageData.title}>
-      <SEO
-        title="Home"
-        keywords={[`face mask`, `covid`, `tsung tsin`]}
-      />
+      <SEO title="Home" keywords={[`face mask`, `covid`, `tsung tsin`]} />
       <img style={{ margin: 0 }} src={pageData.img} alt="jfa wearing a mask" />
-      <h1>
-        {pageData.greeting}
-      </h1>
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-        <div
-          dangerouslySetInnerHTML={{ __html: pageData.text }}
-        />
+      <h1>{pageData.greeting}</h1>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <div dangerouslySetInnerHTML={{ __html: pageData.text }} />
         <div>
           <img src="/assets/undraw_wash_hands_nwl2.svg" alt="washing hands" />
         </div>
       </div>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))',
-        gridTemplateRows: 'auto',
-        rowGap: 50,
-        columnGap: `15%`,
-        margin: '100px 0 200px',
-      }}>
-        {products
-          .filter(p => p.node.frontmatter.adult || p.node.frontmatter.youth)
-          .map(p => (
-            <ProductTemplate
-              key={p.node.frontmatter.tag}
-              data={p.node.frontmatter}
-            />
-        ))}
+      <div>
+        <h2>Rosie's Masks</h2>
+        <p>{pageData.rosieBlurb}</p>
       </div>
+      <ProductsGrid products={products.filter(p => p.creator === "rosie")} />
+      <div>
+        <h2>Maria's Masks</h2>
+        <p>{pageData.mariaBlurb}</p>
+      </div>
+      <ProductsGrid products={products.filter(p => p.creator === "maria")} />
+      <div>
+        <h2>Christine's Masks</h2>
+        <p>{pageData.christineBlurb}</p>
+      </div>
+      <ProductsGrid
+        products={products.filter(p => p.creator === "christine")}
+      />
     </Layout>
-  );
+  )
 }
 
-export default IndexPage;
+export default IndexPage
 
 export const pageQuery = graphql`
   query AllProducts {
-    allMdx(filter: {fileAbsolutePath: {regex: "/products/"}}) {
+    allMdx(filter: { fileAbsolutePath: { regex: "/products/" } }) {
       edges {
         node {
           frontmatter {
             date
             tag
+            creator
             adult
             youth
+            small
+            medium
+            large
             photo
           }
         }
       }
     }
-    pageDataYaml(name: {eq: "Home"}) {
+    pageDataYaml(name: { eq: "Home" }) {
       name
       title
       img
       greeting
       text
+      christineBlurb
+      rosieBlurb
+      mariaBlurb
     }
   }
 `

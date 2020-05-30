@@ -38,6 +38,9 @@ collections:
           - { name: img, label: Feature Image, widget: image }
           - { name: greeting, label: Greeting }
           - { name: text, label: Explanation block, widget: markdown }
-          - { name: christineBlurb, label: Christine's blurb, widget: markdown }
-          - { name: rosieBlurb, label: Rosie's blurb, widget: markdown }
-          - { name: mariaBlurb, label: Maria's blurb, widget: markdown }
+          - { name: christineTitle, label: Christine's title, widget: string }
+          - { name: rosieTitle, label: Rosie's title, widget: string }
+          - { name: mariaTitle, label: Maria's title, widget: string }
+          - { name: christineBlurb, label: Christine's blurb, widget: string }
+          - { name: rosieBlurb, label: Rosie's blurb, widget: string }
+          - { name: mariaBlurb, label: Maria's blurb, widget: string }

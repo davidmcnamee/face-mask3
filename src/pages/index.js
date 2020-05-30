@@ -33,11 +33,9 @@ const ProductsGrid = props => {
 
 const IndexPage = props => {
   const ogProducts = props.data.allMdx.edges
-  console.log(ogProducts)
   const products = ogProducts
     .map(p => p.node.frontmatter)
     .filter(p => {
-      console.log(p)
       return !!p.adult || !!p.youth || !!p.small || !!p.medium || !!p.large
     })
     .map(p => {
@@ -71,17 +69,17 @@ const IndexPage = props => {
         </div>
       </div>
       <div>
-        <h2>Rosie's Masks</h2>
+        <h2>{pageData.rosieTitle}</h2>
         <p>{pageData.rosieBlurb}</p>
       </div>
       <ProductsGrid products={products.filter(p => p.creator === "rosie")} />
       <div>
-        <h2>Maria's Masks</h2>
+        <h2>{pageData.mariaTitle}</h2>
         <p>{pageData.mariaBlurb}</p>
       </div>
       <ProductsGrid products={products.filter(p => p.creator === "maria")} />
       <div>
-        <h2>Christine's Masks</h2>
+        <h2>{pageData.christineTitle}</h2>
         <p>{pageData.christineBlurb}</p>
       </div>
       <ProductsGrid
@@ -118,6 +116,9 @@ export const pageQuery = graphql`
       img
       greeting
       text
+      christineTitle
+      rosieTitle
+      mariaTitle
       christineBlurb
       rosieBlurb
       mariaBlurb

@@ -1,9 +1,7 @@
-mariaTitle: Maria's Marvelous Masks
-img: assets/jfa_banner.jpg
-mariaBlurb: " "
-rosieTitle: Rosalina's Remarkable Masks
-rosieBlurb: " "
 name: Home
+title: The Mask Makers 😷
+img: assets/jfa_banner.jpg
+greeting: 👋 Hey friends
 text: >-
   <p>I am Christine and I've been using my sewing skills to make face masks.  So
   far I've been churning out about 10 a day, 50 per week but it’s way more than
@@ -22,6 +20,8 @@ text: >-
 
   <p></p>
 christineTitle: Christine's Incredible Masks
+rosieTitle: Rosalina's Remarkable Masks
+mariaTitle: Maria's Marvelous Masks
 christineBlurb: " "
-title: The Mask Makers 😷
-greeting: 👋 Hey friends
+rosieBlurb: " My masks are made in 3 adult sizes S (8.5”x5”), M (9”x5.5”), L (10”x6”)"
+mariaBlurb: " "

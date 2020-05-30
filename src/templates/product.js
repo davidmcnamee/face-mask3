@@ -85,15 +85,21 @@ const ProductTemplate = props => {
         )}
         {sizeType === SizeType.SML && (
           <>
-            <p>
-              <strong>Small</strong> {small} left
-            </p>
-            <p>
-              <strong>Medium</strong> {medium} left
-            </p>
-            <p>
-              <strong>Large</strong> {large} left
-            </p>
+            {!!small && (
+              <p>
+                <strong>Small</strong> {small} left
+              </p>
+            )}
+            {!!medium && (
+              <p>
+                <strong>Medium</strong> {medium} left
+              </p>
+            )}
+            {!!large && (
+              <p>
+                <strong>Large</strong> {large} left
+              </p>
+            )}
           </>
         )}
       </motion.div>
@@ -107,9 +113,9 @@ const ProductTemplate = props => {
       )}
       {sizeType === SizeType.SML && (
         <>
-          <p>{small} Small</p>
-          <p>{medium} Medium</p>
-          <p>{large} Large</p>
+          {!!small && <p>{small} Small</p>}
+          {!!medium && <p>{medium} Medium</p>}
+          {!!large && <p>{large} Large</p>}
         </>
       )}
     </div>

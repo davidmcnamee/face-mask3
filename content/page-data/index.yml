@@ -2,12 +2,6 @@ name: Home
 title: Christine's Masks 😷
 img: assets/jfa_banner.jpg
 greeting: 👋 Hey friends
-christineTitle: Christine's Masks
-rosieTitle: Rosie's Masks
-mariaTitle: Maria's Masks
-christineBlurb: text block 1
-rosieBlurb: coming soon
-mariaBlurb: coming soon
 text: >-
   <p>I've been using my sewing skills to make face masks.  So far I've been
   churning out about 10 a day, 50 per week but it’s way more than I can use.</p>
@@ -23,3 +17,9 @@ text: >-
 
 
   <p></p>
+christineTitle: Christine's Incredible Masks
+rosieTitle: Rosalina's Remarkable Masks
+mariaTitle: Maria's Marvelous Masks
+christineBlurb: " "
+rosieBlurb: " "
+mariaBlurb: " "

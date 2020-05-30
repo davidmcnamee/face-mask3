@@ -7,5 +7,5 @@ youth: 0
 small: 0
 medium: 6
 large: 0
-photo: assets/R-002.jpg
+photo: assets/8a90e3da-c962-4d97-85e9-63169f1acff7.jpeg
 ---

@@ -49,6 +49,9 @@ const IndexPage = props => {
       newProduct.creator = p.creator || "christine"
       return newProduct
     })
+    .sort((a, b) => {
+      return a.tag.localeCompare(b.tag)
+    })
   const pageData = props.data.pageDataYaml
 
   return (

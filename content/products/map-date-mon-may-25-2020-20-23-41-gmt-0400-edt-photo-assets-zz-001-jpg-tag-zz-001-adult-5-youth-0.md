@@ -2,7 +2,7 @@
 date: 2020-05-26T00:23:41.514Z
 tag: ZZ-001
 creator: christine
-adult: 3
+adult: 2
 youth: 0
 small: 0
 medium: 0

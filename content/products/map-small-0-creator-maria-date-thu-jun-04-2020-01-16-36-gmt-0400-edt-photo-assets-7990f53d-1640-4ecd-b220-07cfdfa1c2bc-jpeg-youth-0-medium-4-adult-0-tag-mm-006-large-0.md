@@ -1,6 +1,6 @@
 ---
 date: 2020-06-04T05:16:36.137Z
-tag: MM-006 Med
+tag: MM-006
 creator: maria
 adult: 0
 youth: 0

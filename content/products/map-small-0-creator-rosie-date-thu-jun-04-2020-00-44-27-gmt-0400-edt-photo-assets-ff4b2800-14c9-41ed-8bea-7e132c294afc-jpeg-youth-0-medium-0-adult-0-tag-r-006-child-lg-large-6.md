@@ -6,6 +6,6 @@ adult: 0
 youth: 0
 small: 0
 medium: 0
-large: 6
+large: 5
 photo: assets/ff4b2800-14c9-41ed-8bea-7e132c294afc.jpeg
 ---

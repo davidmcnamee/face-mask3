@@ -2,7 +2,7 @@
 date: 2020-06-08T15:41:16.138Z
 tag: Q-004
 creator: christine
-adult: 2
+adult: 1
 youth: 1
 small: 0
 medium: 0

@@ -2,8 +2,8 @@
 date: 2020-06-08T15:37:18.842Z
 tag: Q-001
 creator: christine
-adult: 2
-youth: 2
+adult: 0
+youth: 0
 small: 0
 medium: 0
 large: 0

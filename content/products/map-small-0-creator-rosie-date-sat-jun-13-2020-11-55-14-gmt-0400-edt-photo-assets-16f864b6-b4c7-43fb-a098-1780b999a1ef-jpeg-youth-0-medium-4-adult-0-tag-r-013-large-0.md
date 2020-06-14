@@ -5,7 +5,7 @@ creator: rosie
 adult: 0
 youth: 0
 small: 0
-medium: 4
+medium: 3
 large: 0
 photo: assets/16f864b6-b4c7-43fb-a098-1780b999a1ef.jpeg
 ---

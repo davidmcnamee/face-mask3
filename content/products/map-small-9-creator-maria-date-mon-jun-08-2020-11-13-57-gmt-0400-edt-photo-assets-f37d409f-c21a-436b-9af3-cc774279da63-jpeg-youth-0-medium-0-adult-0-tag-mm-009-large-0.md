@@ -4,7 +4,7 @@ tag: MM-009
 creator: maria
 adult: 0
 youth: 0
-small: 6
+small: 5
 medium: 0
 large: 0
 photo: assets/f37d409f-c21a-436b-9af3-cc774279da63.jpeg

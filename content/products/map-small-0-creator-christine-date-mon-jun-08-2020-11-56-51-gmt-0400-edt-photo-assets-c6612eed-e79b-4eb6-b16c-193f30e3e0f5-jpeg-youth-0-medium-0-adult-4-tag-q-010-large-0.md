@@ -2,7 +2,7 @@
 date: 2020-06-08T15:56:51.271Z
 tag: Q-010
 creator: christine
-adult: 3
+adult: 0
 youth: 0
 small: 0
 medium: 0

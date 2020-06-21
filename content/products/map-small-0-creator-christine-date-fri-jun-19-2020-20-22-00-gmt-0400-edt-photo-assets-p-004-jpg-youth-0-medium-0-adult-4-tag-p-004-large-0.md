@@ -2,7 +2,7 @@
 date: 2020-06-20T00:22:00.876Z
 tag: P-004
 creator: christine
-adult: 4
+adult: 3
 youth: 1
 small: 0
 medium: 0

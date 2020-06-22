@@ -2,7 +2,7 @@
 date: 2020-06-08T15:38:35.148Z
 tag: Q-002
 creator: christine
-adult: 1
+adult: 0
 youth: 0
 small: 0
 medium: 0

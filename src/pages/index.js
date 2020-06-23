@@ -10,7 +10,7 @@ const ProductsGrid = props => {
   const { products } = props
 
   if (products.length === 0) {
-    return <h3>Coming Soon</h3>
+    return <h3>Sorry, all gone!</h3>
   }
 
   return (

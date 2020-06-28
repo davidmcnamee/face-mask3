@@ -4,7 +4,7 @@ tag: MM-003
 creator: maria
 adult: 0
 youth: 0
-small: 4
+small: 3
 medium: 0
 large: 0
 photo: assets/dddc514b-6f9c-42e2-a85e-6224e824f6bd.jpeg

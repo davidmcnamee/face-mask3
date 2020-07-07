@@ -5,7 +5,7 @@ creator: maria
 adult: 0
 youth: 0
 small: 0
-medium: 4
+medium: 3
 large: 0
 photo: assets/89bab93c-fdbb-4b5c-85eb-0e90e5f41486.jpeg
 ---

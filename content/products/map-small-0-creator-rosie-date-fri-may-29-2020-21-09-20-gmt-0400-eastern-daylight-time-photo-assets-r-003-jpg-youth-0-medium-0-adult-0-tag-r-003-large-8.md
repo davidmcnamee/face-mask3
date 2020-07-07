@@ -6,6 +6,6 @@ adult: 0
 youth: 0
 small: 0
 medium: 0
-large: 3
+large: 0
 photo: assets/R-003.jpg
 ---

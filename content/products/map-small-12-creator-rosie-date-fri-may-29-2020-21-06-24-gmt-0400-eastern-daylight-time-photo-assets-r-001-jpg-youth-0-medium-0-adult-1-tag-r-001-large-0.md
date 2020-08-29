@@ -4,7 +4,7 @@ tag: R-001
 creator: rosie
 adult: 0
 youth: 0
-small: 1
+small: 0
 medium: 0
 large: 0
 photo: assets/R-001.jpg

@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import Button from "../components/button"
 import ProductTemplate from "../templates/product"
 
-const ProductsGrid = props => {
+const ProductsGrid = (props) => {
   const { products } = props
 
   if (products.length === 0) {
@@ -24,21 +24,21 @@ const ProductsGrid = props => {
         margin: "100px 0 100px",
       }}
     >
-      {products.map(p => (
+      {products.map((p) => (
         <ProductTemplate key={p.tag} data={p} />
       ))}
     </div>
   )
 }
 
-const IndexPage = props => {
+const IndexPage = (props) => {
   const ogProducts = props.data.allMdx.edges
   const products = ogProducts
-    .map(p => p.node.frontmatter)
-    .filter(p => {
+    .map((p) => p.node.frontmatter)
+    .filter((p) => {
       return !!p.adult || !!p.youth || !!p.small || !!p.medium || !!p.large
     })
-    .map(p => {
+    .map((p) => {
       const newProduct = { ...p }
       // normalization
       newProduct.adult = p.adult || 0
@@ -71,23 +71,6 @@ const IndexPage = props => {
           <img src="/assets/undraw_wash_hands_nwl2.svg" alt="washing hands" />
         </div>
       </div>
-      <div>
-        <h2>{pageData.rosieTitle}</h2>
-        <p>{pageData.rosieBlurb}</p>
-      </div>
-      <ProductsGrid products={products.filter(p => p.creator === "rosie")} />
-      <div>
-        <h2>{pageData.mariaTitle}</h2>
-        <p>{pageData.mariaBlurb}</p>
-      </div>
-      <ProductsGrid products={products.filter(p => p.creator === "maria")} />
-      <div>
-        <h2>{pageData.christineTitle}</h2>
-        <p>{pageData.christineBlurb}</p>
-      </div>
-      <ProductsGrid
-        products={products.filter(p => p.creator === "christine")}
-      />
     </Layout>
   )
 }
